@@ -5,8 +5,6 @@ from enum import Enum
 from enum import IntEnum
 from itertools import combinations
 
-import random # For placeholder guessing
-
 
 class State(IntEnum):
 	"""
@@ -45,9 +43,6 @@ class MyAI( AI ):
 
 	
 	def getAction(self, number: int) -> "Action Object": # type: ignore
-		########################################################################
-		#							YOUR CODE BEGINS						   #
-		########################################################################
 		percept: int = number
 		lastX: int = self.__lastX
 		lastY: int = self.__lastY
@@ -111,10 +106,6 @@ class MyAI( AI ):
 		self.__updateLastPos(x,y)
 		searchSet.update(grid.getAdjDangerList(x,y))
 		return Action(AI.Action.FLAG, x, y)
-
-		########################################################################
-		#							YOUR CODE ENDS							   #
-		########################################################################
 	
 
 	def __updateLastPos(self, x: int, y: int):
@@ -443,3 +434,4 @@ class GameGrid:
 		for i in range(1, self.__numCols + 1):
 			line += f"{str(i-1).rjust(2)}"
 		print(line)
+		
